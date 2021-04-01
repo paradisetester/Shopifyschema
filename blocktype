@@ -1,0 +1,125 @@
+
+  <section class="prod_quality_sec">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+          <div class="prod_quality_cont">
+          {{ section.settings.heading}}
+           <p>{{ section.settings.subheading}}</p>
+
+            <div class="row">
+               
+             
+              
+              {%- for block in section.blocks -%}
+              {% if block.type == 'image' %}
+              <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                <img src="{{block.settings.icons |img_url:'master'}}" alt="Image">
+                <h6>{{block.settings.iconstext}}</h6>
+              </div>
+               {%- endif -%}
+              {%- endfor -%}
+             
+       
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+
+ 
+   
+          <div class="prod_tabs">
+            <ul class="nav nav-pills" id="pills-tab" role="tablist">
+              {%- for block in section.blocks -%}
+              {% if block.type == 'tabs' %}
+              <li class="nav-item" role="presentation">
+                 
+                <a class="nav-link {% if forloop.index == 7 %}active{% endif %}" id="pills-{{forloop.index}}-tab" data-toggle="pill" href="#pills-{{forloop.index}}" role="tab" aria-controls="pills-{{forloop.index}}" aria-selected="true">{{block.settings.tab_heading}}</a>
+              </li>
+               {%- endif -%}
+              {%- endfor -%}
+              
+
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              {%- for block in section.blocks -%}
+              {% if block.type == 'tabs' %}
+              <div class="tab-pane {% if forloop.index == 7 %}fade show active{% endif %}" id="pills-{{forloop.index}}" role="tabpanel" aria-labelledby="pills-{{forloop.index}}-tab">
+				{{block.settings.tabcontent}}
+               
+              </div>
+               {%- endif -%}
+              {%- endfor -%}
+             
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+{% schema %}
+   {
+    "name": "Quality section",
+	"class": "quality-section",
+	"max_blocks": 8,
+    "settings": [
+	{
+      "type": "text",
+      "id": "heading",
+      "label": "Heading text"
+    },
+	{
+      "type": "textarea",
+      "id": "subheading",
+      "label": "SubHeading text"
+    }
+	],
+    "blocks": [
+    {
+    "type": "image",
+    "name": "Image Icons",
+    "settings": [
+    {
+    "type": "image_picker",
+    "id": "icons",
+    "label": "Iconsimage"
+    },
+    {
+    "type": "text",
+    "id": "iconstext",
+    "label": "Iconstext"
+    }
+
+    ]
+    },
+	 {
+    "type": "tabs",
+    "name": "tabs",
+    "settings": [
+    {
+    "type": "text",
+    "id": "tab_heading",
+    "label": "Tabs heading"
+    },
+	{
+    "type": "textarea",
+    "id": "tabcontent",
+    "label": "tabcontent"
+    }
+
+    ]
+    }
+    ]
+
+  
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
