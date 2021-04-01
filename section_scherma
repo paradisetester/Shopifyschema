@@ -1,0 +1,10 @@
+ {
+    "name": "Product Marquee",
+    "settings": [
+	 {
+      "type": "textarea",
+      "id": "marqueetext",
+      "label": "Marquee text"
+    }
+	]
+  }
