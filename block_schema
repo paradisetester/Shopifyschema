@@ -1,0 +1,37 @@
+  {
+    "name": "Support Icons",
+    "class": "supporting-icons-section",
+    "max_blocks": 4,
+    "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading text"
+    }
+    ],
+    "blocks": [
+    {
+    "type": "image",
+    "name": "Image slide"
+    "settings": [
+    {
+    "type": "image_picker",
+    "id": "icons",
+    "label": "Iconsimage"
+    },
+    {
+    "type": "text",
+    "id": "iconstext",
+    "label": "Iconsimage"
+    }
+
+    ]
+    }
+    ],
+  "presets": [
+    {
+      "name": "Support Icons",
+      "category": "Advanced"
+    }
+  ]
+  }
