@@ -6,5 +6,10 @@
       "id": "marqueetext",
       "label": "Marquee text"
     }
-	]
+	],"presets": [
+    {
+      "name": "Product Marquee",
+      "category": "Advanced"
+    }
+  ]
   }
